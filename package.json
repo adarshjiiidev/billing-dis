@@ -25,6 +25,7 @@
       "out/**/*",
       "electron/dist-electron/**/*",
       "public/**/*",
+      ".env",
       "package.json"
     ],
     "mac": {

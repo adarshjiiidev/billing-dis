@@ -5,7 +5,11 @@ import connectDB from './database/db';
 import dotenv from 'dotenv';
 
 // Load environment variables from .env file
-dotenv.config();
+const envPath = app.isPackaged
+  ? path.join(app.getAppPath(), '.env')
+  : path.resolve(process.cwd(), '.env');
+
+dotenv.config({ path: envPath });
 
 const isDev = process.env.NODE_ENV === 'development';
 
